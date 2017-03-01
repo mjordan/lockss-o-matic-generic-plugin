@@ -60,7 +60,7 @@
   </entry>
   <entry>
     <string>plugin_identifier</string>
-    <string>info.lockssomatic.plugin.GenericCompressedArchivePlugin</string>
+    <string>ca.sfu.lib.plugin.LockssOMaticPlugin</string>
   </entry>
   <entry>
     <string>plugin_version</string>
