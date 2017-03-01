@@ -1,0 +1,75 @@
+<map>
+  <entry>
+    <string>plugin_config_props</string>
+    <list>
+      <org.lockss.daemon.ConfigParamDescr>
+        <key>base_url</key>
+        <displayName>Base URL</displayName>
+        <description>The fullly qualified path to where the files to harvest are sitting.</description>
+        <type>3</type>
+        <size>100</size>
+        <definitional>true</definitional>
+        <defaultOnly>false</defaultOnly>
+      </org.lockss.daemon.ConfigParamDescr>
+      <org.lockss.daemon.ConfigParamDescr>
+        <key>manifest_url</key>
+        <displayName>Manifest page</displayName>
+        <description>The fully qualified path to the manifest page.</description>
+        <type>3</type>
+        <size>100</size>
+        <definitional>true</definitional>
+        <defaultOnly>false</defaultOnly>
+      </org.lockss.daemon.ConfigParamDescr>
+      <org.lockss.daemon.ConfigParamDescr>
+        <key>permission_url</key>
+        <displayName>LOCKSS permission statement URL</displayName>
+        <description>URL to the LOCKSS permission statement on the server hosting the content to be harvested.</description>
+        <type>3</type>
+        <size>100</size>
+        <definitional>true</definitional>
+        <defaultOnly>false</defaultOnly>
+      </org.lockss.daemon.ConfigParamDescr>
+    </list>
+  </entry>
+  <entry>
+    <string>au_name</string>
+    <string>"LOM Generic Compressed Archive %s", base_url</string>
+  </entry>
+  <entry>
+    <string>au_start_url</string>
+    <list>
+      <string>"%s", manifest_url</string>
+      <string>"%s", permission_url</string>
+    </list>
+  </entry>
+  <entry>
+    <string>au_def_new_content_crawl</string>
+    <long>1209600000</long>
+  </entry>
+  <entry>
+    <string>au_def_pause_time</string>
+    <long>6000</long>
+  </entry>
+  <entry>
+    <string>plugin_name</string>
+    <string>LOCKSS-O-Matic Generic Compressed Archive Plugin</string>
+  </entry>
+  <entry>
+    <string>plugin_notes</string>
+    <string>Plugin for use with PLNs managed by LOCKSS-O-Matic. Harvests compressed archive files, e.g., .zip, .7z, and .tgz and files with extensions .001, .002, .003, etc.</string>
+  </entry>
+  <entry>
+    <string>plugin_identifier</string>
+    <string>info.lockssomatic.plugin.GenericCompressedArchivePlugin</string>
+  </entry>
+  <entry>
+    <string>plugin_version</string>
+    <string>1</string>
+  </entry>
+  <entry>
+    <string>au_crawlrules</string>
+    <list>
+      <string>1,"^%s.*\.(zip|7z|tgz|\d\d\d)$", base_url</string>
+    </list>
+  </entry>
+</map>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="LOCKSS-O-Matic Generic Plugin" default="build" basedir=".">
+
+  <property name='plugin.name' value='LockssOMaticPlugin'/>
+  <property name='plugin.path' value='ca/sfu/lib/plugin' />
+  
+  <property name='plugin.xml' value="${plugin.name}.xml" />
+  <property name='plugin.jar' value="${plugin.name}.jar" />
+  
+  <property name='build.dir' value='build'/>
+  
+  <target name="build" description="Generate an unsigned LOCKSS plugin jar.">
+    <mkdir dir="${build.dir}" />    
+    <jar destfile="${build.dir}/${plugin.jar}">
+      <fileset dir=".">
+	<include name="${plugin.path}/${plugin.xml}"/>
+      </fileset>
+      <manifest>
+	<section name="${plugin.path}/${plugin.xml}" >
+	  <attribute name="Lockss-Plugin" value="true" />
+	</section>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="clean" description="Clean up the build files.">
+    <delete dir="${build.dir}"/>
+  </target>
+  
+</project>
